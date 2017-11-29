@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Booker
+namespace Booker.View
 {
-    public partial class Form1 : Form
+    public partial class Films : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public Form1()
+        public Films()
         {
             InitializeComponent();
         }
