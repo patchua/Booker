@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Films));
             this.FilmsRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup_Actions = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -70,12 +71,16 @@
             // 
             this.btOpen.Caption = "Open";
             this.btOpen.Id = 1;
+            this.btOpen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btOpen.ImageOptions.Image")));
+            this.btOpen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btOpen.ImageOptions.LargeImage")));
             this.btOpen.Name = "btOpen";
             // 
             // btSave
             // 
             this.btSave.Caption = "Save";
             this.btSave.Id = 2;
+            this.btSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSave.ImageOptions.Image")));
+            this.btSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btSave.ImageOptions.LargeImage")));
             this.btSave.Name = "btSave";
             // 
             // Films
