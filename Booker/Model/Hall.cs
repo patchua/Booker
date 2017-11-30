@@ -5,15 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookingHelper.Model
+namespace Booker.Model
 {
-   public class Hall
+    public class Hall
     {
-        string Name;
-        int Capacity;       
-        bool Support2D;
-        bool Support3D;
-        bool Support4D;        
-       
+        public Hall() {}
+        public string CinemaName { get; set; }
+        public string Name { get; set; }
+        public int Capacity { get; set; }
+        public bool Support2D { get; set; }
+        public bool Support3D { get; set; }
+        public bool Support4D { get; set; }
+
     }
 }

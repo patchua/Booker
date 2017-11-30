@@ -1,4 +1,4 @@
-﻿using BookingHelper.Model;
+﻿
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -6,38 +6,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Booker.Model;
 
-namespace BookingHelper.Helper
+namespace Booker.Helper
 {
-    public class DataHelper
+    public static class DataHelper
     {
-        public string DataPath = System.IO.Directory.GetCurrentDirectory();
-        string filmFile = "film.bh";
-        string cinemaFile = "cinema.bh";
-        
-        //Create type-not-specific Loader and Saver and utilize them
-        public List<Film> LoadFilms()
+        private static string DataPath = System.IO.Directory.GetCurrentDirectory();
+        const string  filmFile = "film.bh";
+        const string hallFile = "hall.bh";
+
+        public static List<Film> LoadFilms()
         {
-            List<Film> list = new List<Film>();
-            string file = DataPath + filmFile;
-            if (File.Exists(file))
-              list=JsonConvert.DeserializeObject<List<Film>>(DataPath + filmFile);
-            return list;
+            return Load<Film>(filmFile);
         }
 
-        public bool SaveFilms(List<Film> films)
+        public static List<Hall> LoadHalls()
+        {
+            return Load<Hall>(hallFile);
+        }
+
+        public static void  SaveFilms(List<Film> list)
+        {
+            Save<Film>(list, filmFile);
+        }
+
+        public static void SaveHalls(List<Hall> list)
+        {
+            Save<Hall>(list, hallFile);
+        }
+
+       
+        private static List<T> Load<T>(string file)
+        {
+            List<T> list = new List<T>();
+            string filepath = DataPath + "\\"+file;
+            if (File.Exists(filepath))            
+                list = JsonConvert.DeserializeObject<List<T>>(File.ReadAllText(filepath));            
+            return list;
+        }
+        private static void Save<T>(List<T> list, string file)
         {
            
-            string output=JsonConvert.SerializeObject(films);
-            string file = DataPath + "\\"+filmFile;
-            if (File.Exists(file))
+            string output=JsonConvert.SerializeObject(list);
+            string filepath = DataPath + "\\"+file;
+            // create backup on eachj save
+            /*if (File.Exists(filepath))
             {
-                string move_to = DataPath + "\\" +  DateTime.Now.ToString("yyyyMMddHHmmss") + filmFile;
+                string move_to = DataPath + "\\" +  DateTime.Now.ToString("yyyyMMddHHmmss") + file;
                 File.Move(file, move_to);
             }
-            File.WriteAllText(file, output);
-
-            return true;
+            */
+            File.WriteAllText(filepath, output);
+          
         }
 
         
