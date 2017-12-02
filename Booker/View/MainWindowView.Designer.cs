@@ -81,6 +81,7 @@
             this.btPlan.Caption = "Plan";
             this.btPlan.Id = 3;
             this.btPlan.Name = "btPlan";
+            this.btPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btPlan_ItemClick);
             // 
             // btSchedule
             // 

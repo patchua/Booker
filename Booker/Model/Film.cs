@@ -10,10 +10,11 @@ namespace Booker.Model
     {
         public Film() { }
         public string Name { get; set; }
-        public TimeSpan Duration { get; set; }
+        public int Duration { get; set; }
+        public int AdDuration { get; set; } //Duration of Advertisement that is obligatory
         public string Distributor { get; set; }
         public int MinimumAge { get; set; }
 
-
     }
+
 }

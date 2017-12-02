@@ -15,7 +15,7 @@ namespace Booker.View
 {
     public partial class MainWindowView : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-
+        int index = 0;
         public MainWindowView()
         {
             InitializeComponent();
@@ -55,6 +55,16 @@ namespace Booker.View
                 form.Show();
             }
             
+        }
+
+        private void btPlan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PlanView form = new PlanView();
+            form.MdiParent = this;
+            form.Text = "New" + form.Text;
+            form.Name = form.Name + index.ToString();
+            index++;
+            form.Show();
         }
     }
 }

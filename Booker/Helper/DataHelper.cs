@@ -20,23 +20,31 @@ namespace Booker.Helper
         {
             return Load<Film>(filmFile);
         }
-
         public static List<Hall> LoadHalls()
         {
             return Load<Hall>(hallFile);
         }
-
-        public static void  SaveFilms(List<Film> list)
+        public static Plan LoadPlan(string fileName)
+        {
+            List<Plan> r= Load<Plan>(fileName);
+            return r.ElementAt(0);
+        }
+        public static void SaveFilms(List<Film> list)
         {
             Save<Film>(list, filmFile);
         }
-
         public static void SaveHalls(List<Hall> list)
         {
             Save<Hall>(list, hallFile);
         }
+        public static void SavePlan(Plan plan,string fileName)
+        {
+            List<Plan> list = new List<Plan>();
+            list.Add(plan);
+            Save<Plan>(list, fileName);
+        }
+        
 
-       
         private static List<T> Load<T>(string file)
         {
             List<T> list = new List<T>();
@@ -59,8 +67,6 @@ namespace Booker.Helper
             */
             File.WriteAllText(filepath, output);
           
-        }
-
-        
+        }        
     }
 }

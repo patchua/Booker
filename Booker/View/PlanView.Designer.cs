@@ -1,0 +1,237 @@
+﻿namespace Booker.View
+{
+    partial class PlanView
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanView));
+            this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.btOpen = new DevExpress.XtraBars.BarButtonItem();
+            this.btSave = new DevExpress.XtraBars.BarButtonItem();
+            this.btNew = new DevExpress.XtraBars.BarButtonItem();
+            this.btAddFilm = new DevExpress.XtraBars.BarButtonItem();
+            this.datePickerPeriod = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.comboBoxCinema = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.gridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ribbon
+            // 
+            this.ribbon.ExpandCollapseItem.Id = 0;
+            this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbon.ExpandCollapseItem,
+            this.btOpen,
+            this.btSave,
+            this.btNew,
+            this.btAddFilm,
+            this.datePickerPeriod,
+            this.comboBoxCinema});
+            this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.MaxItemId = 8;
+            this.ribbon.Name = "ribbon";
+            this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage,
+            this.ribbonPage1});
+            this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemDateEdit1,
+            this.repositoryItemComboBox1});
+            this.ribbon.Size = new System.Drawing.Size(797, 143);
+            // 
+            // btOpen
+            // 
+            this.btOpen.Caption = "Open";
+            this.btOpen.Id = 1;
+            this.btOpen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btOpen.ImageOptions.Image")));
+            this.btOpen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btOpen.ImageOptions.LargeImage")));
+            this.btOpen.Name = "btOpen";
+            this.btOpen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btOpen_ItemClick);
+            // 
+            // btSave
+            // 
+            this.btSave.Caption = "Save";
+            this.btSave.Id = 2;
+            this.btSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSave.ImageOptions.Image")));
+            this.btSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btSave.ImageOptions.LargeImage")));
+            this.btSave.Name = "btSave";
+            this.btSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btSave_ItemClick);
+            // 
+            // btNew
+            // 
+            this.btNew.Caption = "New";
+            this.btNew.Id = 3;
+            this.btNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btNew.ImageOptions.Image")));
+            this.btNew.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNew.ImageOptions.LargeImage")));
+            this.btNew.Name = "btNew";
+            this.btNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNew_ItemClick);
+            // 
+            // btAddFilm
+            // 
+            this.btAddFilm.Caption = "Add Film";
+            this.btAddFilm.Id = 4;
+            this.btAddFilm.Name = "btAddFilm";
+            // 
+            // datePickerPeriod
+            // 
+            this.datePickerPeriod.AutoFillWidthInMenu = DevExpress.Utils.DefaultBoolean.False;
+            this.datePickerPeriod.Caption = "Period";
+            this.datePickerPeriod.Edit = this.repositoryItemDateEdit1;
+            this.datePickerPeriod.EditWidth = 70;
+            this.datePickerPeriod.Id = 6;
+            this.datePickerPeriod.Name = "datePickerPeriod";
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.DisplayFormat.FormatString = "MMMM";
+            this.repositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.EditFormat.FormatString = "MMMM";
+            this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.Mask.EditMask = "MMMM";
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // comboBoxCinema
+            // 
+            this.comboBoxCinema.AutoFillWidthInMenu = DevExpress.Utils.DefaultBoolean.False;
+            this.comboBoxCinema.Caption = "Cinema";
+            this.comboBoxCinema.Edit = this.repositoryItemComboBox1;
+            this.comboBoxCinema.EditWidth = 70;
+            this.comboBoxCinema.Id = 7;
+            this.comboBoxCinema.Name = "comboBoxCinema";
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
+            // ribbonPage
+            // 
+            this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.ribbonPage.Name = "ribbonPage";
+            this.ribbonPage.Text = "File";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btOpen);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btSave);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btNew);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Actions";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Plan";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.btAddFilm);
+            this.ribbonPageGroup2.ItemLinks.Add(this.datePickerPeriod);
+            this.ribbonPageGroup2.ItemLinks.Add(this.comboBoxCinema);
+            this.ribbonPageGroup2.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            // 
+            // gridControl
+            // 
+            this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl.Location = new System.Drawing.Point(0, 143);
+            this.gridControl.MainView = this.gridView;
+            this.gridControl.MenuManager = this.ribbon;
+            this.gridControl.Name = "gridControl";
+            this.gridControl.Size = new System.Drawing.Size(797, 436);
+            this.gridControl.TabIndex = 2;
+            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView});
+            // 
+            // gridView
+            // 
+            this.gridView.GridControl = this.gridControl;
+            this.gridView.Name = "gridView";
+            this.gridView.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // PlanView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(797, 579);
+            this.Controls.Add(this.gridControl);
+            this.Controls.Add(this.ribbon);
+            this.Name = "PlanView";
+            this.Ribbon = this.ribbon;
+            this.Text = "PlanView";
+            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem btOpen;
+        private DevExpress.XtraBars.BarButtonItem btSave;
+        private DevExpress.XtraBars.BarButtonItem btNew;
+        private DevExpress.XtraBars.BarButtonItem btAddFilm;
+        private DevExpress.XtraBars.BarEditItem datePickerPeriod;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraBars.BarEditItem comboBoxCinema;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraGrid.GridControl gridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+    }
+}

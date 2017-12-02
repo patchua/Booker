@@ -14,6 +14,15 @@ namespace Booker.Model
         public DateTime Open { get; set; }
         public DateTime Close { get; set; }
         public List<Hall> Halls { get; set; }
+        public int Capacity
+        {
+            // per day in minutes
+            get
+            {
+                TimeSpan span = Close.Subtract(Open);
+                return (int)span.TotalMinutes;
+            }
+        }
 
     }
 }
