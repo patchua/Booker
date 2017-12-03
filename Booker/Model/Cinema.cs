@@ -10,6 +10,12 @@ namespace Booker.Model
     public class Cinema
     {
         public Cinema() { }
+        public Cinema(string name, DateTime open, DateTime close)
+        {
+            Name = name;
+            Open = open;
+            Close = close;
+        }
         public string Name { get; set; }
         public DateTime Open { get; set; }
         public DateTime Close { get; set; }

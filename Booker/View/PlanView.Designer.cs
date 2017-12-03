@@ -32,7 +32,6 @@
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btOpen = new DevExpress.XtraBars.BarButtonItem();
             this.btSave = new DevExpress.XtraBars.BarButtonItem();
-            this.btNew = new DevExpress.XtraBars.BarButtonItem();
             this.btAddFilm = new DevExpress.XtraBars.BarButtonItem();
             this.datePickerPeriod = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
@@ -44,6 +43,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btSaveAs = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -59,12 +59,12 @@
             this.ribbon.ExpandCollapseItem,
             this.btOpen,
             this.btSave,
-            this.btNew,
             this.btAddFilm,
             this.datePickerPeriod,
-            this.comboBoxCinema});
+            this.comboBoxCinema,
+            this.btSaveAs});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 8;
+            this.ribbon.MaxItemId = 9;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
@@ -86,20 +86,12 @@
             // btSave
             // 
             this.btSave.Caption = "Save";
+            this.btSave.Enabled = false;
             this.btSave.Id = 2;
             this.btSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSave.ImageOptions.Image")));
             this.btSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btSave.ImageOptions.LargeImage")));
             this.btSave.Name = "btSave";
             this.btSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btSave_ItemClick);
-            // 
-            // btNew
-            // 
-            this.btNew.Caption = "New";
-            this.btNew.Id = 3;
-            this.btNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btNew.ImageOptions.Image")));
-            this.btNew.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNew.ImageOptions.LargeImage")));
-            this.btNew.Name = "btNew";
-            this.btNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNew_ItemClick);
             // 
             // btAddFilm
             // 
@@ -157,7 +149,7 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btOpen);
             this.ribbonPageGroup1.ItemLinks.Add(this.btSave);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btNew);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btSaveAs);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Actions";
             // 
@@ -195,6 +187,15 @@
             this.gridView.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             // 
+            // btSaveAs
+            // 
+            this.btSaveAs.Caption = "Save As";
+            this.btSaveAs.Id = 8;
+            this.btSaveAs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btSaveAs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btSaveAs.Name = "btSaveAs";
+            this.btSaveAs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btSaveAs_ItemClick);
+            // 
             // PlanView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,7 +224,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btOpen;
         private DevExpress.XtraBars.BarButtonItem btSave;
-        private DevExpress.XtraBars.BarButtonItem btNew;
         private DevExpress.XtraBars.BarButtonItem btAddFilm;
         private DevExpress.XtraBars.BarEditItem datePickerPeriod;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
@@ -233,5 +233,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private DevExpress.XtraBars.BarButtonItem btSaveAs;
+
     }
 }

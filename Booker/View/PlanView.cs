@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using Booker.Model;
+using Booker.Helper;
 
 namespace Booker.View
 {
@@ -25,30 +27,51 @@ namespace Booker.View
 
         }
         private Plan plan;
+        private string filePath;
+        private List<Cinema> cinemaList;
+        private List<Film> filmList;
+        
+
 
         public PlanView()
         {
             InitializeComponent();
             plan = new Plan();
+            filePath = "";
             
         }
 
         private void btOpen_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DevExpress.XtraEditors.XtraFolderBrowserDialog dlg = new DevExpress.XtraEditors.XtraFolderBrowserDialog();
+
+            XtraOpenFileDialog dlg = new XtraOpenFileDialog();
+            dlg.Filter = DataHelper.planFileFilter;
+            dlg.Multiselect = false;             
             dlg.ShowDialog();
-
-
+            if (dlg.FileName != null)                
+            {
+                filePath = dlg.FileName;
+                btSave.Enabled = true;
+                plan = DataHelper.LoadPlan(filePath);
+            }
         }
 
         private void btSave_ItemClick(object sender, ItemClickEventArgs e)
         {
+            DataHelper.SavePlan(plan, filePath);
+        }     
 
-        }
-
-        private void btNew_ItemClick(object sender, ItemClickEventArgs e)
+        private void btSaveAs_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            XtraSaveFileDialog dlg = new XtraSaveFileDialog();
+            dlg.Filter = DataHelper.planFileFilter;
+            dlg.ShowDialog();
+            if (dlg.FileName != null)
+            {
+                filePath = dlg.FileName;
+                btSave.Enabled = true;
+                DataHelper.SavePlan(plan, filePath);
+            }
         }
     }
 }

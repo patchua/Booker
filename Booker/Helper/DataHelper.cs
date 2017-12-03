@@ -15,10 +15,16 @@ namespace Booker.Helper
         private static string DataPath = System.IO.Directory.GetCurrentDirectory();
         const string  filmFile = "film.bh";
         const string hallFile = "hall.bh";
+        const string cinemaFile = "cinema.bh";
+        public const string planFileFilter = "Plan file|*.plan";
 
         public static List<Film> LoadFilms()
         {
             return Load<Film>(filmFile);
+        }
+        public static List<Cinema> LoadCinemas()
+        {
+            return Load<Cinema>(cinemaFile);
         }
         public static List<Hall> LoadHalls()
         {
@@ -36,6 +42,10 @@ namespace Booker.Helper
         public static void SaveHalls(List<Hall> list)
         {
             Save<Hall>(list, hallFile);
+        }
+        public static void SaveCinemas(List<Cinema> list)
+        {
+            Save<Cinema>(list, cinemaFile);
         }
         public static void SavePlan(Plan plan,string fileName)
         {
