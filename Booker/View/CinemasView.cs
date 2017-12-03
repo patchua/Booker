@@ -13,7 +13,7 @@ using Booker.Helper;
 
 namespace Booker.View
 {
-    public partial class HallsView : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class CinemasView : DevExpress.XtraBars.Ribbon.RibbonForm
     {
 
         public class CinemaHall : Hall
@@ -38,7 +38,7 @@ namespace Booker.View
         private List<Cinema> cinemaList =  new List<Cinema>();
         private List<string> cinemaNames= new List<string>();
         private int index = 0;
-        public HallsView()
+        public CinemasView()
         {
             InitializeComponent();            
         }
@@ -73,8 +73,11 @@ namespace Booker.View
             List<Cinema> toSaveList = new List<Cinema>();
             foreach (CinemaHall chall in cinemaHallsList)
             {
-                Cinema cinema = cinemaList.Find(x => x.Name == chall.CinemaName);
-                toSaveList.Add(new Cinema(cinema.Name, cinema.Open, cinema.Close));
+                if (!toSaveList.Any(x => x.Name == chall.CinemaName))
+                {
+                    Cinema cinema = cinemaList.Find(x => x.Name == chall.CinemaName);
+                    toSaveList.Add(new Cinema(cinema.Name, cinema.Open, cinema.Close));
+                }
             }
             foreach (CinemaHall chall in cinemaHallsList)
             {
@@ -88,8 +91,7 @@ namespace Booker.View
         private void btAddCinema_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Add a form to set all proper values
-            Cinema cinema = new Cinema();
-            cinema.Name = "new" + index.ToString();
+            Cinema cinema = new Cinema("new" + index.ToString(), new DateTime(1,1,1,10,45,0), new DateTime(1,1,1,23,45,0));        
             index++;
             cinemaNames.Add(cinema.Name);
             repositoryItemComboBoxCinema.Items.Add(cinema.Name);

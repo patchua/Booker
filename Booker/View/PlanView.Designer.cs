@@ -37,13 +37,15 @@
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.comboBoxCinema = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.btSaveAs = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btSaveAs = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btRefresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -62,9 +64,10 @@
             this.btAddFilm,
             this.datePickerPeriod,
             this.comboBoxCinema,
-            this.btSaveAs});
+            this.btSaveAs,
+            this.btRefresh});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 9;
+            this.ribbon.MaxItemId = 10;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
@@ -138,6 +141,15 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
+            // btSaveAs
+            // 
+            this.btSaveAs.Caption = "Save As";
+            this.btSaveAs.Id = 8;
+            this.btSaveAs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSaveAs.ImageOptions.Image")));
+            this.btSaveAs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btSaveAs.ImageOptions.LargeImage")));
+            this.btSaveAs.Name = "btSaveAs";
+            this.btSaveAs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btSaveAs_ItemClick);
+            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -156,7 +168,8 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Plan";
             // 
@@ -187,14 +200,18 @@
             this.gridView.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             // 
-            // btSaveAs
+            // ribbonPageGroup3
             // 
-            this.btSaveAs.Caption = "Save As";
-            this.btSaveAs.Id = 8;
-            this.btSaveAs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btSaveAs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btSaveAs.Name = "btSaveAs";
-            this.btSaveAs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btSaveAs_ItemClick);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btRefresh);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Data";
+            // 
+            // btRefresh
+            // 
+            this.btRefresh.Caption = "Refresh Data";
+            this.btRefresh.Id = 9;
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btRefresh_ItemClick);
             // 
             // PlanView
             // 
@@ -206,6 +223,7 @@
             this.Name = "PlanView";
             this.Ribbon = this.ribbon;
             this.Text = "PlanView";
+            this.Load += new System.EventHandler(this.PlanView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
@@ -234,6 +252,7 @@
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraBars.BarButtonItem btSaveAs;
-
+        private DevExpress.XtraBars.BarButtonItem btRefresh;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

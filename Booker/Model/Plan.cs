@@ -9,30 +9,71 @@ namespace Booker.Model
     public class Plan
     {
         public Cinema Cinema { get;  }
-        public DateTime Month { get;  }
-        public PlanTimeFrame PlanTimeFrame { get; }
-        public int TimeFramePeriods { get; }
+        public DateTime Month { get;  }                                     //TODO: Create set method, update TimeFramePlan,Base&AllPeriods
+        public PlanTimeFrame PlanTimeFrame { get; }                         //TODO: Create Set method, update TimeFramePlan and re-calc AllPeriods
+        public List<DateTime> BaseTimeFramePeriods { get; }
+        public List<DateTime> AllTimeFramePeriods { get; }
         public Dictionary<int, List<PlanItem>> TimeFramePlan { get; }       //number of PlanTimeFrame and Planned Item
         public Plan()
         {
-
+            TimeFramePlan = new Dictionary<int, List<PlanItem>>();
         }
-        public Plan(Cinema cinema, DateTime month, PlanTimeFrame timeframe)
+        public Plan(Cinema cinema, DateTime month, PlanTimeFrame timeframe):this()
         {
             Cinema = cinema;
             Month = month;
             PlanTimeFrame = timeframe;
-            TimeFramePeriods = this.TimeFramesInMonth();
+            var t= TimeFramesInMonth();
+            BaseTimeFramePeriods = t.Item1;
+            AllTimeFramePeriods = t.Item2;
             TimeFramePlan = new Dictionary<int, List<PlanItem>>();
-            for (int i = 1; i <= TimeFramePeriods;i++)
+            for (int i = 1; i <= BaseTimeFramePeriods.Count;i++)
             {
                 TimeFramePlan.Add(i, new List<PlanItem>());
             }
         }
 
+        private Tuple<List<DateTime>,List<DateTime>> TimeFramesInMonth()
+        {
+
+            List<DateTime> baseList = new List<DateTime>();
+            List<DateTime> allList = new List<DateTime>();
+            int firstThursday = 0;
+            int lastThursday = 0;                       
+            int days = DateTime.DaysInMonth(Month.Year, Month.Month);
+            for (int day = 1; day <= days; day++)
+            {
+                DateTime dt = new DateTime(Month.Year, Month.Month, day);
+                if (dt.DayOfWeek == DayOfWeek.Thursday)
+                {
+                    baseList.Add(dt);
+                    lastThursday = day;
+                    if (firstThursday == 0)
+                        firstThursday = day;
+                }
+            }
+            switch (PlanTimeFrame)
+            {
+                case PlanTimeFrame.Week:
+                    allList = baseList;
+                    break;
+                case PlanTimeFrame.Day:
+                    int num = ((lastThursday - firstThursday)/7 + 1)*7;
+                    DateTime dt=new DateTime(Month.Year, Month.Month, firstThursday);
+                    for (int i = 1; i <= num; i++)
+                    {
+                        allList.Add(dt);
+                        dt = dt.AddDays(1);
+                    }
+                        
+                    break;
+            }
+            return Tuple.Create(baseList, allList);
+        }
+
         public int Capacity()
         {
-            //Cinema capacity in mintes for cousen PlanTimeFrame
+            //Cinema capacity in mintes for chosen PlanTimeFrame
             switch (PlanTimeFrame)
             {
                 case PlanTimeFrame.Day:
@@ -41,42 +82,11 @@ namespace Booker.Model
                 case PlanTimeFrame.Week:
                     return Cinema.Capacity * 7;
                     break;
-                default: return 0;
+                default:
+                    throw new NotImplementedException();
                     break;
                 }                       
-        }
-
-        private int TimeFramesInMonth()
-        {
-            
-            int firstThursday = 0;
-            int lastThursday = 0;
-            int days = DateTime.DaysInMonth(Month.Year, Month.Month);
-            for (int day = 1; day <= days; day++)
-            {                                
-                DateTime dt = new DateTime(Month.Year, Month.Month, day);
-                if (dt.DayOfWeek == DayOfWeek.Thursday)
-                {
-                    lastThursday = day;
-                    if (firstThursday == 0)
-                        firstThursday = day;
-                }
-            }
-            switch (PlanTimeFrame)
-            {
-                case PlanTimeFrame.Day:
-                    return ((lastThursday - firstThursday) / 7 + 1) * 7;
-                    break;
-                case PlanTimeFrame.Week:
-                    return (lastThursday - firstThursday)/7 + 1;
-                    break;
-                default:
-                    return 0;
-                    break;
-            }
-            
-        }
-
+        }        
         public int CapacityPlanned()
         {
             //Curentlly planned capacity
@@ -87,8 +97,6 @@ namespace Booker.Model
 
             return sum;
         }
-
-
     }
     
     public class PlanItem

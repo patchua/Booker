@@ -26,19 +26,16 @@ namespace Booker.View
             string FilmName { get; set; }            
 
         }
-        private Plan plan;
-        private string filePath;
-        private List<Cinema> cinemaList;
-        private List<Film> filmList;
+        private Plan plan= new Plan();
+        private string filePath="";
+        private List<Cinema> cinemaList= new List<Cinema>();
+        private List<Film> filmList= new List<Film>();
         
 
 
         public PlanView()
         {
-            InitializeComponent();
-            plan = new Plan();
-            filePath = "";
-            
+            InitializeComponent();                                    
         }
 
         private void btOpen_ItemClick(object sender, ItemClickEventArgs e)
@@ -72,6 +69,18 @@ namespace Booker.View
                 btSave.Enabled = true;
                 DataHelper.SavePlan(plan, filePath);
             }
+        }
+
+        private void PlanView_Load(object sender, EventArgs e)
+        {
+            cinemaList = DataHelper.LoadCinemas();
+            filmList = DataHelper.LoadFilms();
+        }
+
+        private void btRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            cinemaList = DataHelper.LoadCinemas();
+            filmList = DataHelper.LoadFilms();
         }
     }
 }

@@ -46,11 +46,11 @@ namespace Booker.View
             
         }
 
-        private void btHalls_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btCinemas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (!CheckActivate(typeof(HallsView)))
+            if (!CheckActivate(typeof(CinemasView)))
             {
-                HallsView form = new HallsView();
+                CinemasView form = new CinemasView();
                 form.MdiParent = this;                
                 form.Show();
             }

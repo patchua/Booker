@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.ParentRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btFilms = new DevExpress.XtraBars.BarButtonItem();
-            this.btHalls = new DevExpress.XtraBars.BarButtonItem();
+            this.btCinemas = new DevExpress.XtraBars.BarButtonItem();
             this.btPlan = new DevExpress.XtraBars.BarButtonItem();
             this.btSchedule = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -51,7 +51,7 @@
             this.ParentRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ParentRibbonControl.ExpandCollapseItem,
             this.btFilms,
-            this.btHalls,
+            this.btCinemas,
             this.btPlan,
             this.btSchedule});
             this.ParentRibbonControl.Location = new System.Drawing.Point(0, 0);
@@ -69,12 +69,12 @@
             this.btFilms.Name = "btFilms";
             this.btFilms.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btFilms_ItemClick);
             // 
-            // btHalls
+            // btCinemas
             // 
-            this.btHalls.Caption = "Halls";
-            this.btHalls.Id = 2;
-            this.btHalls.Name = "btHalls";
-            this.btHalls.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btHalls_ItemClick);
+            this.btCinemas.Caption = "Cinemas";
+            this.btCinemas.Id = 2;
+            this.btCinemas.Name = "btCinemas";
+            this.btCinemas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCinemas_ItemClick);
             // 
             // btPlan
             // 
@@ -99,7 +99,7 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btFilms);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btHalls);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btCinemas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btPlan);
             this.ribbonPageGroup1.ItemLinks.Add(this.btSchedule);
             this.ribbonPageGroup1.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
@@ -157,7 +157,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ParentRibbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.BarButtonItem btFilms;
-        private DevExpress.XtraBars.BarButtonItem btHalls;
+        private DevExpress.XtraBars.BarButtonItem btCinemas;
         private DevExpress.XtraBars.BarButtonItem btPlan;
         private DevExpress.XtraBars.BarButtonItem btSchedule;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;

@@ -9,8 +9,11 @@ namespace Booker.Model
 {
     public class Cinema
     {
-        public Cinema() { }
-        public Cinema(string name, DateTime open, DateTime close)
+        public Cinema()
+        {
+            Halls = new List<Hall>();
+        }
+        public Cinema(string name, DateTime open, DateTime close):this()
         {
             Name = name;
             Open = open;

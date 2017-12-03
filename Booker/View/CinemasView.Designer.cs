@@ -2,7 +2,7 @@
 
 namespace Booker.View
 {
-    partial class HallsView
+    partial class CinemasView
     {
         /// <summary> 
         /// Required designer variable.
